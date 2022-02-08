@@ -14,16 +14,16 @@ class ProductPage():
         self.methods = BaseClass(self.driver)
 
     def add_to_list(self):
-        """LİSTEYE EKLEME YAPILIR"""
+        """adds to the list"""
 
         self.methods.clicked(self.ADD_TO_LIST_BTN, 0)
 
     def navigate_to_wish_list(self):
-        """Wish List Şeçilir"""
+        """Wish List Selected"""
 
         self.methods.clicked(self.WISH_LIST, 0)
 
     def get_product_name(self):
-        """WEBSİTESİ ÜZERİNDEN İSTENEN METİNLERİ ALMAK İÇİN KULLANILIR"""
+        """Used to GET requested textsR"""
 
         return self.methods.get_text(self.TEXT, 0)

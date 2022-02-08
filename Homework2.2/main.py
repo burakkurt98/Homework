@@ -9,8 +9,10 @@ class Insan():
 
     def kisi_bilgileri(self):
         return self.ad, self.soyad, self.yas, self.ulke, self.sehir, self.yetenekler
-    def yetenek_ekle(self , yetenekEkle):
+
+    def yetenek_ekle(self, yetenekEkle):
         self.yetenekler.append(yetenekEkle)
+
 
 def main():
     obje_insan = Insan()
@@ -18,6 +20,7 @@ def main():
     obje_insan.yetenek_ekle("Oyun oynamak")
     obje_insan.yetenek_ekle("Kod yazmak")
     print(obje_insan.kisi_bilgileri())
+
 
 if __name__ == '__main__':
     main()

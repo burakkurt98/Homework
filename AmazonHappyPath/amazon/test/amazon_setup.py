@@ -10,7 +10,7 @@ from amazon.page.product_page import ProductPage
 
 
 class Setup():
-    """AYARLAMALARI YAPTIĞIMI VE OBJELERİ OLUŞTURDUĞUMUZ KISIM"""
+    """The section where we make the settings and create the objects"""
     driver = webdriver.Chrome("C:/Users/testinium/Desktop/chromedriver.exe")
     url = "https://www.amazon.com/"
     amazon_main = MainPage(driver)
@@ -20,7 +20,7 @@ class Setup():
     amazon_cart = CartPage(driver)
 
     def navigate_to_home_page(self):
-        """DRİVER AYARLARI YAPILIR VE WEBSİTESİ AYAĞA KALDIRILIR"""
+        """driver settings made and website published"""
 
         self.driver.maximize_window()
         option = Options()

@@ -21,24 +21,24 @@ class AmozonHappyPath(unittest.TestCase, Setup):
 
     def testAmazon(self):
         self.navigate_to_home_page()
-        assert self.url == self.driver.current_url, "URL HATASI"
+        assert self.url == self.driver.current_url, "URL ERROR"
         self.amazon_main.navigate_to_login_page()
         self.amazon_login.login()
         self.amazon_main.navigate_to_search()
         search_text_control = self.amazon_category.get_text_samsung()
-        assert "Samsung" in search_text_control, "SAMSUNG İLE İLGİLİ EŞLEŞME HATASI"
+        assert "Samsung" in search_text_control, "MATCHING ERROR WITH SAMSUNG TEXT"
         self.amazon_category.navigate_to_next_page()
         page_number = self.amazon_category.get_page_number()
-        assert page_number == "2", "SAYFA NUMARASI YANLIŞ"
+        assert page_number == "2", "PAGE NUMBER IS WRONG"
         self.amazon_category.click_product()
         product_name = self.amazon_product.get_product_name()
         self.amazon_product.add_to_list()
         self.amazon_product.navigate_to_wish_list()
         cart_product_name = self.amazon_cart.get_cart_product_name()
-        assert product_name == cart_product_name, "SEÇİLEN ÜRÜN HATALI EKLENDİ"
+        assert product_name == cart_product_name, "SELECTED PRODUCT WAS ADDED INCORRECTLY"
         self.amazon_cart.delete_item_from_cart()
         delete_text = self.amazon_cart.get_delete_text()
-        assert delete_text == "Undo", "HATALI ÜRÜN SİLME İŞLEMİ"
+        assert delete_text == "Undo", "PRODUCT DELETE IS INCORRECT"
 
     def tear_down(self):
         self.driver.quit()

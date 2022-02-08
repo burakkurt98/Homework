@@ -3,7 +3,7 @@ def main():
     vize2 = float(input("Vize 2 notunuzu giriniz :"))
     final = float(input("Final notunuzu giriniz :"))
     if 101 > vize1 > 0 and 101 > vize2 > 0 and 101 > final > 0:
-        toplam = (vize1 // 10) * 3 + (vize2 // 10) * 3 + (final // 10) * 4
+        toplam = (vize1 / 10) * 3 + (vize2 / 10) * 3 + (final / 10) * 4
         if toplam >= 90:
             print("AA")
         elif 90 > toplam >= 85:

@@ -3,10 +3,10 @@ from amazon.base.page_base import BaseClass
 
 
 class LoginPage():
-    """Sayfaya Login olmak için gerekli işlemleri gerçekleştirir"""
+    """Performs the necessary operations to login to the page."""
 
     email = "burakkurt72@gmail.com"
-    password = "Burak123452"
+    password = "*"
     EMAIL = (By.CSS_SELECTOR, "input[id='ap_email']")  # 0
     PASSWORD = (By.CSS_SELECTOR, "input[id='ap_password']")  # 0
     CONTINUE_BTN = (By.CSS_SELECTOR, ".a-button-input")  # 0
@@ -17,7 +17,7 @@ class LoginPage():
         self.methods = BaseClass(self.driver)
 
     def login(self):
-        """Login Bilgilerini girmek"""
+        """Entering your login information"""
 
         self.methods.write_to_text(self.EMAIL, self.email, 0)
         self.methods.clicked(self.CONTINUE_BTN, 0)

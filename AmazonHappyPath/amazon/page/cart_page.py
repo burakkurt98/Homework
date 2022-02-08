@@ -3,7 +3,7 @@ from amazon.base.page_base import BaseClass
 
 
 class CartPage():
-    """Kart Sayfasında işlemler gerçekleştirir"""
+    """Performs transactions on the Card Page"""
 
     DELETE_BTN = (By.CSS_SELECTOR, ".a-button-input.a-declarative")  # 1
     PRODUCT_NAME = (By.CSS_SELECTOR, ".a-row.a-size-small")  # 0
@@ -14,17 +14,17 @@ class CartPage():
         self.methods = BaseClass(self.driver)
 
     def delete_item_from_cart(self):
-        """Seçilen ürün silinir"""
+        """The selected product is deleted"""
 
         self.methods.window_scroll_page(100)
         self.methods.clicked(self.DELETE_BTN, 1)
 
     def get_cart_product_name(self):
-        """WEBSİTESİ ÜZERİNDEN İSTENEN METİNLERİ ALMAK İÇİN KULLANILIR"""
+        """Used to GET requested texts"""
 
         return self.methods.get_text(self.PRODUCT_NAME, 0)
 
     def get_delete_text(self):
-        """WEBSİTESİ ÜZERİNDEN İSTENEN METİNLERİ ALMAK İÇİN KULLANILIR"""
+        """Used to GET requested texts"""
 
         return self.methods.get_text(self.DELETE_TEXT, 0)

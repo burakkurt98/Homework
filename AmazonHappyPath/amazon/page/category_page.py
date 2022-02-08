@@ -3,7 +3,7 @@ from amazon.base.page_base import BaseClass
 
 
 class CategoryPage():
-    """Katogori sayfasında gerekli işlemleri yerine getirir"""
+    """Performs transactions on the Category Page"""
 
     NEXT_PAGE_BTN = (By.CSS_SELECTOR, ".s-pagination-separator")  # 0
     PRODUCT_CART = (By.CSS_SELECTOR, ".s-link-style.a-text-normal")  # 4
@@ -15,22 +15,22 @@ class CategoryPage():
         self.methods = BaseClass(self.driver)
 
     def navigate_to_next_page(self):
-        """Next Page işlemini yerine getirir"""
+        """Performs the Next Page action"""
 
         self.methods.window_scroll_page(2000)
         self.methods.clicked(self.NEXT_PAGE_BTN, 0)
 
     def click_product(self):
-        """Ürün şeçme işlemi yerine getirilir"""
+        """Makes product selection"""
 
         self.methods.clicked(self.PRODUCT_CART, 4)
 
     def get_text_samsung(self):
-        """WEBSİTESİ ÜZERİNDEN İSTENEN METİNLERİ ALMAK İÇİN KULLANILIR"""
+        """Used to GET requested texts"""
 
         return self.methods.get_text(self.SAMSUNG_TEXT, 0)
 
     def get_page_number(self):
-        """WEBSİTESİ ÜZERİNDEN İSTENEN METİNLERİ ALMAK İÇİN KULLANILIR"""
+        """Used to GET requested texts"""
 
         return self.methods.get_text(self.PAGE_NUMBER, 0)
